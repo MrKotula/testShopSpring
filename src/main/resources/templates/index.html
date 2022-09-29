@@ -13,7 +13,17 @@
     <p>You are amazing!</p>
 </div>
 <main class="container">
-
+    <div class="items" th:if="${!items.isEmpty()}">
+        <div th:each="el : ${items}">
+            <img th:src="${el.image}" th:alt="${el.title}">
+            <h3 th:text="${el.title}" />
+            <p th:text="${el.info}" />
+            <span th:text="${el.price} + '$'" />
+        </div>
+    </div>
+    <div th:if="${items.isEmpty()}" class="block">
+        <h3>items not found</h3>
+    </div>
 </main>
 <div th:replace="layouts/footer :: footer" ></div>
 </body>
