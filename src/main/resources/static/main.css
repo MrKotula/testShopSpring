@@ -136,7 +136,7 @@ form input, form textarea {
     resize: none;
 }
 
-form button, .edit-btn {
+form button, .edit-btn{
     margin-top: 20px 15px;
     padding: 10px 25px;
     border: 0;
@@ -147,7 +147,7 @@ form button, .edit-btn {
     transition: background 500ms ease;
 }
 
-form button:hover {
+form button:hover, .edit-btn:hover {
     background: #934434;
 }
 
