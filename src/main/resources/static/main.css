@@ -22,7 +22,7 @@ a {
     transition: color 500ms ease;
    }
 
-a: hover {
+a:hover {
     color: #1f1f1f;
 }
 
@@ -124,3 +124,31 @@ div.block {
     font-weight: 600;
     color: #6a5412;
 }
+
+form input, form textarea {
+    width: 300px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    margin-top: 20px;
+    resize: none;
+}
+
+form button{
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background: red;
+    transition: background 500ms ease;
+}
+
+form button:hover {
+    background: #934434;
+}
+
+

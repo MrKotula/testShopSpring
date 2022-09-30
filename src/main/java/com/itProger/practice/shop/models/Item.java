@@ -15,6 +15,15 @@ public class Item {
     private String title, info, image;
     private short price;
 
+    public Item() {
+    }
+
+    public Item(String title, String info, String image, short price) {
+        this.title = title;
+        this.info = info;
+        this.image = image;
+        this.price = price;
+    }
 
     public long getId() {
         return id;
