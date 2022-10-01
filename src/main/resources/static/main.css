@@ -150,5 +150,16 @@ form button, .edit-btn{
 form button:hover, .edit-btn:hover {
     background: #934434;
 }
+main p1 {
+    float: left;
+    margin-left: 10px;
+    font-size: 26px;
+}
+main a {
+    margin-left: 10px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+}
 
 

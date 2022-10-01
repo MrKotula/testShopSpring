@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="UTF-8">
   <title>User account</title>
@@ -9,7 +9,8 @@
 <div th:replace="layouts/header :: header" ></div>
 <main class="container">
   <h1>User account</h1>
-  <form method="post" action="/logout">
+  <p1> Hello, <span sec:authentication="name"/></p1>
+  <form method="post" th:action="@{/logout}">
       <button type="submit">logout</button>
   </form>
 </main>

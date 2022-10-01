@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="UTF-8">
   <title th:text="${item.title}" />
@@ -16,9 +16,9 @@
       <span th:text="${item.price} + '$'" />
   </div>
   </div>
-    <a th:href="'/item/' + ${item.id} + '/update'" class="edit-btn">Edit</a>
-    <form method="post" th:action="'/item/' + ${item.id} + '/delete'">
-        <button type="submit">Delete</button>
+    <a th:href="'/item/' + ${item.id} + '/update'" class="edit-btn" sec:authorize="hasAuthority('USER') || hasAuthority('ADMINISTRATOR')">Edit</a>
+    <form method="post" th:action="@{'/item/' + ${item.id} + '/delete'}">
+        <button type="submit" sec:authorize="hasAuthority('ADMINISTRATOR')">Delete</button>
     </form>
 </main>
 <div th:replace="layouts/footer :: footer" ></div>

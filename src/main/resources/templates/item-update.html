@@ -9,7 +9,7 @@
 <div th:replace="layouts/header :: header" ></div>
 <main class="container">
   <h1>Edit item</h1>
-  <form method="post">
+  <form method="post" th:action="@{/item/update}">
     <input type="text" name="title" th:value="${item.title}" placeholder="enter title name">
     <input type="text" name="image" th:value="${item.image}" placeholder="enter URL path to picture">
     <input type="number" name="price" th:value="${item.price}" placeholder="enter price for item">

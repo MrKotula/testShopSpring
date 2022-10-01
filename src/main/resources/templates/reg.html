@@ -18,7 +18,7 @@
 <div th:replace="layouts/header :: header" ></div>
 <main class="container">
   <h1>Registration</h1>
-  <form method="post" action="/reg">
+  <form method="post" th:action="@{/reg}">
     <input type="text" name="username" placeholder="enter login">
     <input type="text" name="email" placeholder="enter email">
     <input type="password" name="password" placeholder="enter password">
