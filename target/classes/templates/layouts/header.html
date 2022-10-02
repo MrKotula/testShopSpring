@@ -1,0 +1,16 @@
+<header class="container" xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security" th:fragment="header">
+  <span class="logo">ItShop</span>
+  <nav>
+    <a href="/">Main page</a>
+    <a href="about-us">About us</a>
+    <span sec:authorize="!isAuthenticated()">
+      <a href="/login">LogIn</a>
+      <a href="/reg">Registration</a>
+    </span>
+    <span sec:authorize="isAuthenticated()">
+      <a href="/add-item">Add new item</a>
+      <a href="/user">User account </a>
+    </span>
+  </nav>
+</header>
