@@ -1,8 +1,10 @@
 package com.itProger.practice.shop.controllers;
 
 import com.itProger.practice.shop.models.Item;
+import com.itProger.practice.shop.models.User;
 import com.itProger.practice.shop.repo.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +21,9 @@ public class ItemController {
     }
 
     @PostMapping("/add-item")
-    public String store(@RequestParam String title, @RequestParam String image,
+    public String store(@AuthenticationPrincipal User user, @RequestParam String title, @RequestParam String image,
                         @RequestParam String price, @RequestParam String info){
-        Item item = new Item(title, info, image, Short.parseShort(price));
+        Item item = new Item(title, info, image, Short.parseShort(price), user);
         itemRepository.save(item);
         return "redirect:/";
     }

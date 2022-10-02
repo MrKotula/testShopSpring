@@ -1,9 +1,6 @@
 package com.itProger.practice.shop.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Item {
@@ -15,14 +12,27 @@ public class Item {
     private String title, info, image;
     private short price;
 
+    @JoinColumn(name = "user_id")
+    @OneToOne(fetch = FetchType.EAGER)
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Item() {
     }
 
-    public Item(String title, String info, String image, short price) {
+    public Item(String title, String info, String image, short price, User user) {
         this.title = title;
         this.info = info;
         this.image = image;
         this.price = price;
+        this.user = user;
     }
 
     public long getId() {

@@ -1,5 +1,12 @@
 package com.itProger.practice.shop.models;
 
-public enum Role {
-    USER, ADMINISTRATOR, MODERATOR
+import org.springframework.security.core.GrantedAuthority;
+
+public enum Role implements GrantedAuthority {
+    USER, ADMINISTRATOR, MODERATOR;
+
+    @Override
+    public String getAuthority() {
+        return name();
+    }
 }
