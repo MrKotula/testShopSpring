@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Users items</title>
+  <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+<body>
+<div th:replace="layouts/header :: header" ></div>
+<h1 style="padding-left: 50px">Users items: </h1>
+<main class="container">
+  <div class="items">
+  <div th:each="el : ${items}">
+      <img th:src="${el.image}" th:alt="${el.title}" >
+      <h3 th:text="${el.title}" />
+      <p th:text="${el.info}" /><br>
+      <p>Author: <b th:text="${el.user.username}"></b></p>
+      <span th:text="${el.price} + '$'" />
+  </div>
+  </div>
+</main>
+<div th:replace="layouts/footer :: footer" ></div>
+</body>
+</html>

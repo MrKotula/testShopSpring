@@ -162,4 +162,41 @@ main a {
     cursor: pointer;
 }
 
+.adm-btn{
+    color: red;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.adm-panel {
+    width: 1200px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid silver;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    margin-top: 45px;
+    resize: none;
+}
+.items-adm{
+    display: block;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 130px;
+    height: 25px;
+    background-color: blue;
+    float: left;
+    margin-top: 15px;
+    }
+
+.items-empty{
+    color: red;
+    display: flex;
+    padding-top: 50px;
+}
+
+
+
+
 

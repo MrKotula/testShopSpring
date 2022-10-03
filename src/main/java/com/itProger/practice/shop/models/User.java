@@ -4,6 +4,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -33,6 +34,11 @@ public class User implements UserDetails {
         this.enabled = enabled;
         this.roles = roles;
     }
+
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            mappedBy = "user")
+    private Set<Item> items = new HashSet<>();
 
     public String getUsername() {
         return username;
@@ -64,6 +70,22 @@ public class User implements UserDetails {
 
     public String getPassword() {
         return password;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Set<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(Set<Item> items) {
+        this.items = items;
     }
 
     public void setPassword(String password) {

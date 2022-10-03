@@ -12,5 +12,8 @@
       <a href="/add-item">Add new item</a>
       <a href="/user">User account </a>
     </span>
+    <span sec:authorize="hasAuthority('ADMINISTRATOR')">
+      <a href="/admin" class="adm-btn">Admin account</a>
+    </span>
   </nav>
 </header>
